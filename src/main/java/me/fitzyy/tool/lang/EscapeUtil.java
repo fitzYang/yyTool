@@ -1,0 +1,93 @@
+/*
+ * Copyright (c) 2018, Fitzyy. All Rights Reserved.
+ */
+
+package me.fitzyy.tool.lang;
+
+
+import org.apache.commons.lang3.StringEscapeUtils;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+
+import me.fitzyy.tool.StringPool;
+
+/**
+ * <p>
+ * 转义工具集.
+ *
+ * 1.JDK提供的URL 转义，转义后的URL可作为URL中的参数
+ *
+ * 2.Commons-Lang的xml/html 转义
+ *
+ * 比如 "bread" & "butter" 转化为 &quot;bread&quot; &amp; &quot;butter&quot;
+ * </p>
+ *
+ * @author sog
+ * @version 1.0
+ * @since JDK 1.7
+ */
+public class EscapeUtil {
+
+
+    /**
+     * URL 编码, Encode默认为UTF-8.
+     *
+     * 转义后的URL可作为URL中的参数
+     */
+    public static String urlEncode(String part) {
+        try {
+            return URLEncoder.encode(part, StringPool.UTF_8);
+        } catch (UnsupportedEncodingException ignored) {
+            return null;
+        }
+    }
+
+    /**
+     * URL 解码, Encode默认为UTF-8. 转义后的URL可作为URL中的参数
+     */
+    public static String urlDecode(String part) {
+        try {
+            return URLDecoder.decode(part, StringPool.UTF_8);
+        } catch (UnsupportedEncodingException e) {
+            return null;
+        }
+    }
+
+    /**
+     * Xml转码，将字符串转码为符合XML1.1格式的字符串.
+     *
+     * 比如 "bread" & "butter" 转化为 &quot;bread&quot; &amp; &quot;butter&quot;
+     */
+    public static String escapeXml(String xml) {
+        return StringEscapeUtils.escapeXml11(xml);
+    }
+
+    /**
+     * Xml转码，XML格式的字符串解码为普通字符串.
+     *
+     * 比如 &quot;bread&quot; &amp; &quot;butter&quot; 转化为"bread" & "butter"
+     */
+    public static String unescapeXml(String xml) {
+        return StringEscapeUtils.unescapeXml(xml);
+    }
+
+    /**
+     * Html转码，将字符串转码为符合HTML4格式的字符串.
+     *
+     * 比如 "bread" & "butter" 转化为 &quot;bread&quot; &amp; &quot;butter&quot;
+     */
+    public static String escapeHtml(String html) {
+        return StringEscapeUtils.escapeHtml4(html);
+    }
+
+    /**
+     * Html解码，将HTML4格式的字符串转码解码为普通字符串.
+     *
+     * 比如 &quot;bread&quot; &amp; &quot;butter&quot;转化为"bread" & "butter"
+     */
+    public static String unescapeHtml(String html) {
+        return StringEscapeUtils.unescapeHtml4(html);
+    }
+}

@@ -1,0 +1,209 @@
+<!--
+  ~ Copyright (c) 2018. Fitzyy
+  ~ All Rights Reserved
+  -->
+
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>me.fitzyy</groupId>
+    <artifactId>yyTool</artifactId>
+    <packaging>jar</packaging>
+    <version>0.0.1</version>
+    <name>yyTool</name>
+    <url>https://www.fitzyy.me/</url>
+    <scm>
+        <url>https://github.com/fitzYang/yyTool</url>
+        <connection>scm:git:https://github.com/fitzYang/yyTool.git</connection>
+        <developerConnection>scm:git:https://github.com/fitzYang/yyTool.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+
+        <mysql-connector-java.version>5.1.39</mysql-connector-java.version>
+        <!-- 阿里json框架 -->
+        <fastjson.version>1.2.46</fastjson.version>
+        <commons-lang3.version>3.7</commons-lang3.version>
+        <guava.version>24.0-jre</guava.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-codec.version>1.11</commons-codec.version>
+        <commons-io.version>2.6</commons-io.version>
+        <!-- 日期类工具 -->
+        <joda-time.version>2.9.9</joda-time.version>
+        <!-- 汉字转拼音工具 -->
+        <jpinyin.version>1.1.8</jpinyin.version>
+        <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
+        <spring-data-commons.version>2.0.2.RELEASE</spring-data-commons.version>
+        <!-- 数据库Mybatis -->
+        <mybatis-plus.version>2.1.6</mybatis-plus.version>
+        <!-- ftl模板 -->
+        <freemarker.version>2.3.27-incubating</freemarker.version>
+        <!-- 安全框架 -->
+        <shiro-core.version>1.4.0</shiro-core.version>
+        <!-- 时间美化工具-->
+        <prettytime.version>4.0.1.Final</prettytime.version>
+        <!-- 验证码工具 -->
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <!-- GeoHash 计算工具-->
+        <geohash.version>1.3.0</geohash.version>
+        <java-jwt.version>3.3.0</java-jwt.version>
+        <!-- 工具包 -->
+        <hutool.version>4.0.5</hutool.version>
+        <!--SAP JCO 驱动包-->
+        <sapjco.version>3.0.17</sapjco.version>
+        <!-- Lambo 插件 -->
+        <lombok.version>1.16.20</lombok.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <version>${spring-data-commons.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons-codec.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>${commons-collections.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
+        </dependency>
+        <!-- 汉字转拼音 -->
+        <dependency>
+            <groupId>com.github.stuxuhai</groupId>
+            <artifactId>jpinyin</artifactId>
+            <version>${jpinyin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ocpsoft.prettytime</groupId>
+            <artifactId>prettytime</artifactId>
+            <version>${prettytime.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${java-jwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>${freemarker.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>${shiro-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.penggle</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>${kaptcha.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sap</groupId>
+            <artifactId>com.sap.conn.jco</artifactId>
+            <version>${sapjco.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.hsr</groupId>
+            <artifactId>geohash</artifactId>
+            <version>${geohash.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.icepdf.os</groupId>
+            <artifactId>icepdf-core</artifactId>
+            <version>6.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.source.version}</source>
+                    <target>${java.target.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <optimize>true</optimize>
+                    <debug>true</debug>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
