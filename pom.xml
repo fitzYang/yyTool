@@ -155,22 +155,11 @@
             <version>${kaptcha.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.sap</groupId>
-            <artifactId>com.sap.conn.jco</artifactId>
-            <version>${sapjco.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>ch.hsr</groupId>
             <artifactId>geohash</artifactId>
             <version>${geohash.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.icepdf.os</groupId>
-            <artifactId>icepdf-core</artifactId>
-            <version>6.2.2</version>
         </dependency>
 
         <dependency>
@@ -206,4 +195,18 @@
             </plugin>
         </plugins>
     </build>
+
+
+    <distributionManagement>
+        <repository>
+            <id>haiyi-m2</id>
+            <name>HaiYi Release Repository</name>
+            <url>http://192.168.0.62:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>haiyi-m2</id>
+            <name>HaiYi Snapshot Repository</name>
+            <url>http://192.168.0.62:8081/repository/maven-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
